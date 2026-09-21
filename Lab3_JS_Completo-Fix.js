@@ -75,9 +75,13 @@ const palabras = ["hola", "javascript", "web"];
 console.log("Números duplicados:", procesarLista(numeros, numero => numero * 2));
 console.log("Palabras en mayúsculas:", procesarLista(palabras, palabra => palabra.toUpperCase()));
 
+// procesarLista se parece a map porque recorre cada elemento, aplica una función y devuelve un nuevo arreglo; map ya existe porque esta operación es muy común.
+
 function crearMultiplicador(factor) {
   return numero => numero * factor;
 }
+
+// El closure aparece porque la función devuelta sigue teniendo acceso a la variable factor de crearMultiplicador.
 
 const porTres = crearMultiplicador(3);
 console.log("10 por 3:", porTres(10));
@@ -131,6 +135,8 @@ function nombresPorCategoria(catalogo, categoria) {
     .filter(({ categoria: cat }) => cat === categoria)
     .map(({ nombre }) => nombre);
 }
+
+// La desestructuración hace el código más legible porque permite usar directamente las propiedades necesarias sin repetir el objeto completo.
 
 function valorTotalInventario(catalogo) {
 
